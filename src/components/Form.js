@@ -80,7 +80,7 @@ const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
           checked={important}
           onChange={() => setImportant(!important)}
         />
-        <label htmlFor="important">Importantes</label>
+        <label htmlFor="important">Importante</label>
       </div>
     </form>
   );

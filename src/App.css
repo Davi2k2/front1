@@ -113,8 +113,10 @@ button:focus {
 .importante{
   color: #fff;
   font-size: 20px;
+  margin-top: 15px;
 }
 
 .important{
   background-color: #ca7474;
+  margin-left: 10px;
 }
