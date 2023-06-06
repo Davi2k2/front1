@@ -6,11 +6,11 @@ Este projeto foi criado pelo Davi.Milones
 
 No diretório do projeto, você pode executar:
 
+### `npm install`
+
 ### `npm install axios`
 
 ### `npm install json-server --save-dev`
-
-### `npm install -g json-server`
 
 Instala o servidor json no modo de desenvolvimento.\
 Abra [http://localhost:3001](http://localhost:3001) para visualizá-lo no seu navegador.
