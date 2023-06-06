@@ -38,19 +38,17 @@ const TodosList = ({ todos, setTodos, setEditTodo, setInput }) => {
 
   const updateTodo = (todo) => {
     setEditTodo(todo);
-    // setInput(todo.title);
+   setInput(todo.title);
   };
 
   return (
     <div>
       {todos.map((todo) => (
         <li className={`list-item ${todo.important ? "important" : ""}`} key={todo.id}>
-          <input
-            type="text"
-            value={todo.title}
-            className={`list ${todo.important ? "important" : ""}`}
-            onChange={(event) => event.preventDefault()}
-          />
+          <span className={`list ${todo.important ? "important" : ""}`}>
+            {todo.title}
+          </span>
+          
           <div className="main-edition">
             <button className="button-complete task-button" onClick={() => handleComplete(todo)}>
               <img src="/imagem/check.png" alt="imagem" />

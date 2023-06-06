@@ -33,7 +33,7 @@ const App = () => {
           />
         </div>
         <div>
-          <TodosList todos={todos} setTodos={setTodos} setEditTodo={setEditTodo} />
+        <TodosList todos={todos} setTodos={setTodos} setEditTodo={setEditTodo} setInput={setInput} />
         </div>
       </div>
     </div>
