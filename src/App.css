@@ -107,7 +107,6 @@ button:focus {
 
 .main-edition{
   position: relative;
-  
 }
 
 .importante{
@@ -118,23 +117,25 @@ button:focus {
 
 .important{
   background-color: #ca7474;
-  margin-left: 10px;
-}
 
-.slide-enter {
-  transform: translateX(-100%);
 }
-
-.slide-enter-active {
-  transform: translateX(0%);
-  transition: transform 500ms;
+.success-message{
+  color: #fff;
+  font-size: 20px;
+  margin-top: 15px;
+  text-align: center;
+  background-color: #4caf50;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
-
-.slide-exit {
-  transform: translateX(0%);
-}
-
-.slide-exit-active {
-  transform: translateX(-100%);
-  transition: transform 500ms;
+.error-message{
+  color: #fff;
+  font-size: 20px;
+  margin-top: 15px;
+  text-align: center;
+  background-color: #f44336;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
 }

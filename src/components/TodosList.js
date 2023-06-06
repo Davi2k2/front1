@@ -25,20 +25,29 @@ const TodosList = ({ todos, setTodos, setEditTodo, setInput }) => {
     }
   };
 
-  const handleComplete = (todo) => {
-    setTodos(
-      todos.map((item) => {
-        if (item.id === todo.id) {
-          return { ...item, completed: !item.completed };
+  const importantTodo = async (todo) => {
+     try {
+       await axios.put(`http://localhost:3001/todo/${todo.id}`, {
+          ...todo,
+          important: !todo.important,
+        });
+        const updatedTodos = todos.map((item) => {
+          if (item.id === todo.id) {
+            return { ...item, important: !item.important };
+          }
+          return item;
         }
-        return item;
-      })
-    );
+      );
+      setTodos(updatedTodos);
+    } catch (error) {
+      console.error('Error updating todo:', error);
+    }
+   
   };
 
   const updateTodo = (todo) => {
     setEditTodo(todo);
-   setInput(todo.title);
+    setInput(todo.title);
   };
 
   return (
@@ -48,9 +57,8 @@ const TodosList = ({ todos, setTodos, setEditTodo, setInput }) => {
           <span className={`list ${todo.important ? "important" : ""}`}>
             {todo.title}
           </span>
-          
           <div className="main-edition">
-            <button className="button-complete task-button" onClick={() => handleComplete(todo)}>
+            <button className="button-complete task-button" onClick={() => importantTodo(todo)}>
               <img src="/imagem/check.png" alt="imagem" />
             </button>
             <button className="button-edit task-button" onClick={() => updateTodo (todo)}>
